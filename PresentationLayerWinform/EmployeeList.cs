@@ -15,23 +15,25 @@ namespace PresentationLayerWinform
 {
     public partial class EmployeeList : Form
     {
+        private IBLEmployees _ble;
+
         public EmployeeList()
         {
+            _ble = new BLEmployees(new DALEmployeesMongo());
             InitializeComponent();
         }
 
         private void EmployeeList_Load(object sender, EventArgs e)
         {
-   
 
-            
-            
-            IBLEmployees _ble = new BLEmployees(new DALEmployeesMongo());
+            this.listBox1.SelectedIndexChanged -= new System.EventHandler(this.listBox1_SelectionChangeCommited);
             List<Employee> employeeList = _ble.GetAllEmployees();
 
             listBox1.DataSource = employeeList;
             listBox1.DisplayMember = "Name";
             listBox1.ValueMember = "Id";
+
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectionChangeCommited);
         }
 
         private void InitializeComponent()
@@ -46,8 +48,7 @@ namespace PresentationLayerWinform
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(272, 238);
             this.listBox1.TabIndex = 0;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            this.Load += new System.EventHandler(this.EmployeeList_Load);
+
             // 
             // EmployeeList
             // 
@@ -57,11 +58,15 @@ namespace PresentationLayerWinform
             this.Load += new System.EventHandler(this.EmployeeList_Load);
             this.ResumeLayout(false);
 
+
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBox1_SelectionChangeCommited(object sender, EventArgs e)
         {
-           // throw new Exception();
+            
+
+                throw new Exception();
+             
         }
     }
 }

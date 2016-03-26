@@ -1,0 +1,28 @@
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\Test.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\Test.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\BusinessLogicLayer.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\DataAccessLayer.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\Shared.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\EntityFramework.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\BusinessLogicLayer.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\Shared.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\DataAccessLayer.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\bin\Debug\EntityFramework.xml
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\obj\Debug\Test.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL_2016\PracticoTSI1\Test\obj\Debug\Test.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\Test.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\Test.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\BusinessLogicLayer.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\DataAccessLayer.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\Microsoft.Practices.Unity.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\Shared.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\BusinessLogicLayer.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\Shared.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\bin\Debug\DataAccessLayer.pdb
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\obj\Debug\Test.csprojResolveAssemblyReference.cache
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\obj\Debug\Test.dll
+D:\Fing\Materias\TSI1\2016\Practicos\Practico1\PracticoTSI1_FULL - Copy\PracticoTSI1\Test\obj\Debug\Test.pdb

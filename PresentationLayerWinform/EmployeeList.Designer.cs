@@ -21,6 +21,9 @@
         }
 
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button nuevo;
+        private System.Windows.Forms.Button modificar;
+        private System.Windows.Forms.Button eliminar;
     }
 }
 

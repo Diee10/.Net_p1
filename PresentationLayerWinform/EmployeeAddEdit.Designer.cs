@@ -30,20 +30,142 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.fulltime = new System.Windows.Forms.RadioButton();
+            this.parttime = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SalaryOrHourly = new System.Windows.Forms.Label();
+            this.nameInput = new System.Windows.Forms.TextBox();
+            this.dateInput = new System.Windows.Forms.TextBox();
+            this.SalaryOrHourlyIput = new System.Windows.Forms.TextBox();
+            this.save = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // fulltime
+            // 
+            this.fulltime.AutoSize = true;
+            this.fulltime.Location = new System.Drawing.Point(12, 12);
+            this.fulltime.Name = "fulltime";
+            this.fulltime.Size = new System.Drawing.Size(63, 17);
+            this.fulltime.TabIndex = 0;
+            this.fulltime.TabStop = true;
+            this.fulltime.Text = "Full time";
+            this.fulltime.UseVisualStyleBackColor = true;
+            // 
+            // parttime
+            // 
+            this.parttime.AutoSize = true;
+            this.parttime.Location = new System.Drawing.Point(81, 12);
+            this.parttime.Name = "parttime";
+            this.parttime.Size = new System.Drawing.Size(70, 17);
+            this.parttime.TabIndex = 1;
+            this.parttime.TabStop = true;
+            this.parttime.Text = "Part Time";
+            this.parttime.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(9, 46);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Start Date";
+            // 
+            // SalaryOrHourly
+            // 
+            this.SalaryOrHourly.AutoSize = true;
+            this.SalaryOrHourly.Location = new System.Drawing.Point(9, 98);
+            this.SalaryOrHourly.Name = "SalaryOrHourly";
+            this.SalaryOrHourly.Size = new System.Drawing.Size(36, 13);
+            this.SalaryOrHourly.TabIndex = 4;
+            this.SalaryOrHourly.Text = "Salary";
+            // 
+            // nameInput
+            // 
+            this.nameInput.Location = new System.Drawing.Point(72, 46);
+            this.nameInput.Name = "nameInput";
+            this.nameInput.Size = new System.Drawing.Size(100, 20);
+            this.nameInput.TabIndex = 5;
+            // 
+            // dateInput
+            // 
+            this.dateInput.Location = new System.Drawing.Point(72, 72);
+            this.dateInput.Name = "dateInput";
+            this.dateInput.Size = new System.Drawing.Size(100, 20);
+            this.dateInput.TabIndex = 6;
+            // 
+            // SalaryOrHourlyIput
+            // 
+            this.SalaryOrHourlyIput.Location = new System.Drawing.Point(72, 99);
+            this.SalaryOrHourlyIput.Name = "SalaryOrHourlyIput";
+            this.SalaryOrHourlyIput.Size = new System.Drawing.Size(100, 20);
+            this.SalaryOrHourlyIput.TabIndex = 7;
+            // 
+            // save
+            // 
+            this.save.Location = new System.Drawing.Point(12, 138);
+            this.save.Name = "save";
+            this.save.Size = new System.Drawing.Size(75, 23);
+            this.save.TabIndex = 8;
+            this.save.Text = "Save";
+            this.save.UseVisualStyleBackColor = true;
+            this.save.Click += new System.EventHandler(this.save_Click);
+            // 
+            // cancel
+            // 
+            this.cancel.Location = new System.Drawing.Point(97, 138);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(75, 23);
+            this.cancel.TabIndex = 9;
+            this.cancel.Text = "Cancel";
+            this.cancel.UseVisualStyleBackColor = true;
+            this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
             // EmployeeAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(184, 182);
+            this.Controls.Add(this.cancel);
+            this.Controls.Add(this.save);
+            this.Controls.Add(this.SalaryOrHourlyIput);
+            this.Controls.Add(this.dateInput);
+            this.Controls.Add(this.nameInput);
+            this.Controls.Add(this.SalaryOrHourly);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.parttime);
+            this.Controls.Add(this.fulltime);
             this.Name = "EmployeeAddEdit";
             this.Text = "EmployeeAddEdit";
             this.Load += new System.EventHandler(this.EmployeeAddEdit_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.RadioButton fulltime;
+        private System.Windows.Forms.RadioButton parttime;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label SalaryOrHourly;
+        private System.Windows.Forms.TextBox nameInput;
+        private System.Windows.Forms.TextBox dateInput;
+        private System.Windows.Forms.TextBox SalaryOrHourlyIput;
+        private System.Windows.Forms.Button save;
+        private System.Windows.Forms.Button cancel;
     }
 }

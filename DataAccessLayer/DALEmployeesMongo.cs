@@ -49,13 +49,13 @@ namespace DataAccessLayer
 
         public void DeleteEmployee(int id)
         {
-            var filter = Builders<Employee>.Filter.Eq("id", id);
+            var filter = Builders<Employee>.Filter.Eq("_id", id);
             this.collection.DeleteOneAsync(filter);
         }
 
         public void UpdateEmployee(Employee emp)
         {
-            var filter = Builders<Employee>.Filter.Eq("id", emp.Id);
+            var filter = Builders<Employee>.Filter.Eq("_id", emp.Id);
             var update = Builders<Employee>.Update.Set("Name", emp.Name).Set("StartDate", emp.StartDate);
             var result = collection.UpdateOneAsync(filter, update);
 

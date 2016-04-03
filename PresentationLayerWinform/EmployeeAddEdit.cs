@@ -30,7 +30,7 @@ namespace PresentationLayerWinform
             if(this.employee != null)
             {
                 this.nameInput.Text = this.employee.Name;
-                this.dateInput.Text = this.employee.StartDate.ToString();
+                this.dateInput.Value = this.employee.StartDate;
                 if(this.employee.GetType().Equals("PartTimeEmployee"))
                 {
                     this.SalaryOrHourlyIput.Text = ((PartTimeEmployee)this.employee).HourlyRate.ToString();
@@ -69,9 +69,14 @@ namespace PresentationLayerWinform
                 }
             }
             this.employee.Name = this.nameInput.Text;
-            this.employee.StartDate = DateTime.Parse(this.dateInput.Text);
+            this.employee.StartDate = this.dateInput.Value;
             _ble.AddEmployee(this.employee);
             this.Close();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,10 +36,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.SalaryOrHourly = new System.Windows.Forms.Label();
             this.nameInput = new System.Windows.Forms.TextBox();
-            this.dateInput = new System.Windows.Forms.TextBox();
             this.SalaryOrHourlyIput = new System.Windows.Forms.TextBox();
             this.save = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
+            this.dateInput = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // fulltime
@@ -98,13 +98,6 @@
             this.nameInput.Size = new System.Drawing.Size(100, 20);
             this.nameInput.TabIndex = 5;
             // 
-            // dateInput
-            // 
-            this.dateInput.Location = new System.Drawing.Point(72, 72);
-            this.dateInput.Name = "dateInput";
-            this.dateInput.Size = new System.Drawing.Size(100, 20);
-            this.dateInput.TabIndex = 6;
-            // 
             // SalaryOrHourlyIput
             // 
             this.SalaryOrHourlyIput.Location = new System.Drawing.Point(72, 99);
@@ -132,15 +125,24 @@
             this.cancel.UseVisualStyleBackColor = true;
             this.cancel.Click += new System.EventHandler(this.cancel_Click);
             // 
+            // dateInput
+            // 
+            this.dateInput.Location = new System.Drawing.Point(72, 73);
+            this.dateInput.Name = "dateInput";
+            this.dateInput.Size = new System.Drawing.Size(100, 20);
+            this.dateInput.TabIndex = 6;
+            this.dateInput.Value = new System.DateTime(2016, 4, 3, 17, 24, 15, 0);
+            this.dateInput.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
             // EmployeeAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(184, 182);
+            this.Controls.Add(this.dateInput);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.save);
             this.Controls.Add(this.SalaryOrHourlyIput);
-            this.Controls.Add(this.dateInput);
             this.Controls.Add(this.nameInput);
             this.Controls.Add(this.SalaryOrHourly);
             this.Controls.Add(this.label2);
@@ -163,9 +165,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label SalaryOrHourly;
         private System.Windows.Forms.TextBox nameInput;
-        private System.Windows.Forms.TextBox dateInput;
         private System.Windows.Forms.TextBox SalaryOrHourlyIput;
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.DateTimePicker dateInput;
     }
 }

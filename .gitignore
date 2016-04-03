@@ -1,0 +1,9 @@
+PresentationLayerWinform/bin/
+BusinessLogicLayer/obj/
+BusinessLogicLayer/bin/
+.vs/PracticoTSI1/v14/.suo
+CrossCutting/obj/
+DataAccessLayer/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Test/obj/
+ServiceLayer/obj/
+ServiceLayer/bin/

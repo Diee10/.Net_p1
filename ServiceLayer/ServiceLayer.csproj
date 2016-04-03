@@ -7,7 +7,7 @@
     <ProjectGuid>{E09D6C36-A3C2-4B9C-A407-D57E483A911C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ServiceLayer</RootNamespace>
+    <RootNamespace>Microsoft.ServiceModel.Samples</RootNamespace>
     <AssemblyName>ServiceLayer</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

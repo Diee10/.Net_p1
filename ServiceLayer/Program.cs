@@ -7,7 +7,7 @@ using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ServiceLayer
+namespace Microsoft.ServiceModel.Samples
 {
     class Program
     {
@@ -26,6 +26,7 @@ namespace ServiceLayer
 
         private static void SetupService()
         {
+            
         }
     }
 }

@@ -122,7 +122,13 @@ namespace PresentationLayerWinform
         {
             EmployeeAddEdit viewEdit = new EmployeeAddEdit(null, _ble);
             viewEdit.Show();
+            var self = this;
+            viewEdit.FormClosing += (s, evt)=>{
+                List<Employee> employeeList = _ble.GetAllEmployees();
+                listBox1.DataSource = employeeList;
+            };
         }
+
 
         private void modificar_Click(object sender, EventArgs e)
         {

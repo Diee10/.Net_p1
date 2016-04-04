@@ -27,7 +27,7 @@ namespace DataAccessLayer
         public void DeleteEmployee(int id)
         {
             var matched_Employee = (from c in db.Employee
-                                    where c.Id == id
+                                    where c.IdEmployee == id
                                     select c).SingleOrDefault();
             try
             {
@@ -45,7 +45,7 @@ namespace DataAccessLayer
             try
             {
                 var empleado = db.Employee
-                    .Where(w => w.Id == emp.Id)
+                    .Where(w => w.IdEmployee == emp.IdEmployee)
                     .SingleOrDefault();
 
                 if (emp != null)
@@ -83,7 +83,7 @@ throw ex;
             try
             {
                 emp = db.Employee
-                   .Where(w => w.Id == id)
+                   .Where(w => w.IdEmployee == id)
                    .SingleOrDefault();
 
                 return emp;

@@ -31,7 +31,7 @@ namespace PresentationLayerWinform
 
             listBox1.DataSource = employeeList;
             listBox1.DisplayMember = "Name";
-            listBox1.ValueMember = "Id";
+            listBox1.ValueMember = "IdEmployee";
 
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectionChangeCommited);
         }
@@ -113,7 +113,7 @@ namespace PresentationLayerWinform
             }
             else
             {
-                _ble.DeleteEmployee(selectedEmp.Id);
+                _ble.DeleteEmployee(selectedEmp.IdEmployee);
                 EmployeeList_Load(sender, e);
             }
         }
@@ -121,11 +121,9 @@ namespace PresentationLayerWinform
         private void nuevo_Click(object sender, EventArgs e)
         {
             EmployeeAddEdit viewEdit = new EmployeeAddEdit(null, _ble);
-            viewEdit.Show();
-            var self = this;
-            viewEdit.FormClosing += (s, evt)=>{
-                List<Employee> employeeList = _ble.GetAllEmployees();
-                listBox1.DataSource = employeeList;
+            viewEdit.Show(); 
+            viewEdit.FormClosing += (s, evt)=>{ 
+                EmployeeList_Load(sender, e);
             };
         }
 
@@ -134,6 +132,9 @@ namespace PresentationLayerWinform
         {
             EmployeeAddEdit viewEdit = new EmployeeAddEdit((Employee)listBox1.SelectedItem, _ble);
             viewEdit.Show();
+            viewEdit.FormClosing += (s, evt) => {
+                EmployeeList_Load(sender, e);
+            };
         }
     }
 }

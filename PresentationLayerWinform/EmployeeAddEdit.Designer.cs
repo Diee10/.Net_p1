@@ -131,8 +131,7 @@
             this.dateInput.Name = "dateInput";
             this.dateInput.Size = new System.Drawing.Size(100, 20);
             this.dateInput.TabIndex = 6;
-            this.dateInput.Value = new System.DateTime(2016, 4, 3, 17, 24, 15, 0);
-            this.dateInput.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dateInput.Value = new System.DateTime(2016, 4, 3, 17, 24, 15, 0); 
             // 
             // EmployeeAddEdit
             // 

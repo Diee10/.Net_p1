@@ -27,7 +27,7 @@ namespace DataAccessLayer
                 m.MapInheritedProperties();
                 m.ToTable("PART_TIME_EMP");
             });
-            modelBuilder.Entity<Employee>().Property(p => p.Id).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
+            modelBuilder.Entity<Employee>().Property(p => p.IdEmployee).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
 
             base.OnModelCreating(modelBuilder);
         }

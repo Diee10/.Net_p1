@@ -8,6 +8,7 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using MongoDB.Driver.Builders;
 using MongoDB.Bson.Serialization;
+using MongoDB.Bson.Serialization.IdGenerators;
 
 namespace DataAccessLayer
 {
@@ -23,7 +24,8 @@ namespace DataAccessLayer
             {
                 cm.AutoMap();
                 cm.SetIgnoreExtraElements(true);
-                cm.SetIsRootClass(true);
+                cm.SetIsRootClass(true); 
+                
             });
 
             BsonClassMap.RegisterClassMap<PartTimeEmployee>(cm =>
@@ -44,7 +46,7 @@ namespace DataAccessLayer
 
         public void AddEmployee(Employee emp)
         {
-            this.collection.InsertOneAsync(emp);
+            this.collection.InsertOneAsync(emp).Wait();
         }
 
         public void DeleteEmployee(int id)
@@ -55,7 +57,7 @@ namespace DataAccessLayer
 
         public void UpdateEmployee(Employee emp)
         {
-            var filter = Builders<Employee>.Filter.Eq("_id", emp.Id);
+            var filter = Builders<Employee>.Filter.Eq("_id", emp.IdEmployee);
             var update = Builders<Employee>.Update.Set("Name", emp.Name).Set("StartDate", emp.StartDate);
             var result = collection.UpdateOneAsync(filter, update);
 

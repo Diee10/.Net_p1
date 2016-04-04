@@ -6,6 +6,8 @@ using System.ServiceModel;
 using System.ServiceModel.Description;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 
 namespace Microsoft.ServiceModel.Samples
 {
@@ -21,7 +23,14 @@ namespace Microsoft.ServiceModel.Samples
 
         private static void SetupDependencies()
         {
-            blHandler = new BLEmployees(new DataAccessLayer.DALEmployeesEF());
+            IUnityContainer container = new UnityContainer();
+            container.LoadConfiguration();
+
+            IBLEmployees blHandler = container.Resolve<IBLEmployees>();
+
+            blHandler.GetAllEmployees();
+
+            //blHandler = new BLEmployees(new DataAccessLayer.DALEmployeesEF());
         }
 
         private static void SetupService()

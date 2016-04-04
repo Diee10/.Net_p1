@@ -26,9 +26,9 @@
       <Schema Namespace="CompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Employee" Abstract="true">
           <Key>
-            <PropertyRef Name="Id" />
+            <PropertyRef Name="IdEmployee" />
           </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEmployee" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
@@ -50,7 +50,7 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="IsTypeOf(CompanyModel.Employee)">
               <MappingFragment StoreEntitySet="EmployeesTPH">
-                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="IdEmployee" ColumnName="ID" />
                 <ScalarProperty Name="StartDate" ColumnName="START_DATE" />
                 <ScalarProperty Name="Name" ColumnName="NAME" />
               </MappingFragment>
@@ -58,14 +58,14 @@
             <EntityTypeMapping TypeName="IsTypeOf(CompanyModel.FullTimeEmployee)">
               <MappingFragment StoreEntitySet="EmployeesTPH">
                 <ScalarProperty Name="Salary" ColumnName="SALARY" />
-                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="IdEmployee" ColumnName="ID" />
                 <Condition ColumnName="TYPE_EMP" Value="1" />
               </MappingFragment>
             </EntityTypeMapping>
             <EntityTypeMapping TypeName="IsTypeOf(CompanyModel.PartTimeEmployee)">
               <MappingFragment StoreEntitySet="EmployeesTPH">
                 <ScalarProperty Name="HourlyRate" ColumnName="RATE" />
-                <ScalarProperty Name="Id" ColumnName="ID" />
+                <ScalarProperty Name="IdEmployee" ColumnName="ID" />
                 <Condition ColumnName="TYPE_EMP" Value="2" />
               </MappingFragment>
             </EntityTypeMapping>

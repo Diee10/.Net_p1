@@ -14,7 +14,7 @@ namespace DataAccessLayer.Model
     
     public abstract partial class Employee
     {
-        public int Id { get; set; }
+        public int IdEmployee { get; set; }
         public string Name { get; set; }
         public System.DateTime StartDate { get; set; }
     }

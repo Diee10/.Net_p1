@@ -11,7 +11,7 @@ namespace Shared.Entities
     [KnownType(typeof(PartTimeEmployee))]
     public abstract class Employee
     {
-        public int Id { get; set; }
+        public int IdEmployee { get; set; }
         public string Name { get; set; }
         public DateTime StartDate { get; set; }
     }

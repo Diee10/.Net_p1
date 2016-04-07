@@ -40,6 +40,8 @@
             this.save = new System.Windows.Forms.Button();
             this.cancel = new System.Windows.Forms.Button();
             this.dateInput = new System.Windows.Forms.DateTimePicker();
+            this.idEmpleado = new System.Windows.Forms.TextBox();
+            this.idEmp = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // fulltime
@@ -67,7 +69,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 46);
+            this.label1.Location = new System.Drawing.Point(9, 68);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 2;
@@ -76,7 +78,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 72);
+            this.label2.Location = new System.Drawing.Point(9, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 3;
@@ -85,7 +87,7 @@
             // SalaryOrHourly
             // 
             this.SalaryOrHourly.AutoSize = true;
-            this.SalaryOrHourly.Location = new System.Drawing.Point(9, 98);
+            this.SalaryOrHourly.Location = new System.Drawing.Point(9, 120);
             this.SalaryOrHourly.Name = "SalaryOrHourly";
             this.SalaryOrHourly.Size = new System.Drawing.Size(36, 13);
             this.SalaryOrHourly.TabIndex = 4;
@@ -93,21 +95,21 @@
             // 
             // nameInput
             // 
-            this.nameInput.Location = new System.Drawing.Point(72, 46);
+            this.nameInput.Location = new System.Drawing.Point(80, 68);
             this.nameInput.Name = "nameInput";
             this.nameInput.Size = new System.Drawing.Size(100, 20);
             this.nameInput.TabIndex = 5;
             // 
             // SalaryOrHourlyIput
             // 
-            this.SalaryOrHourlyIput.Location = new System.Drawing.Point(72, 99);
+            this.SalaryOrHourlyIput.Location = new System.Drawing.Point(80, 121);
             this.SalaryOrHourlyIput.Name = "SalaryOrHourlyIput";
             this.SalaryOrHourlyIput.Size = new System.Drawing.Size(100, 20);
             this.SalaryOrHourlyIput.TabIndex = 7;
             // 
             // save
             // 
-            this.save.Location = new System.Drawing.Point(12, 138);
+            this.save.Location = new System.Drawing.Point(12, 160);
             this.save.Name = "save";
             this.save.Size = new System.Drawing.Size(75, 23);
             this.save.TabIndex = 8;
@@ -117,7 +119,7 @@
             // 
             // cancel
             // 
-            this.cancel.Location = new System.Drawing.Point(97, 138);
+            this.cancel.Location = new System.Drawing.Point(97, 160);
             this.cancel.Name = "cancel";
             this.cancel.Size = new System.Drawing.Size(75, 23);
             this.cancel.TabIndex = 9;
@@ -127,17 +129,35 @@
             // 
             // dateInput
             // 
-            this.dateInput.Location = new System.Drawing.Point(72, 73);
+            this.dateInput.Location = new System.Drawing.Point(80, 95);
             this.dateInput.Name = "dateInput";
             this.dateInput.Size = new System.Drawing.Size(100, 20);
             this.dateInput.TabIndex = 6;
-            this.dateInput.Value = new System.DateTime(2016, 4, 3, 17, 24, 15, 0); 
+            this.dateInput.Value = new System.DateTime(2016, 4, 3, 17, 24, 15, 0);
+            // 
+            // idEmpleado
+            // 
+            this.idEmpleado.Location = new System.Drawing.Point(80, 42);
+            this.idEmpleado.Name = "idEmpleado";
+            this.idEmpleado.Size = new System.Drawing.Size(100, 20);
+            this.idEmpleado.TabIndex = 10;
+            // 
+            // idEmp
+            // 
+            this.idEmp.AutoSize = true;
+            this.idEmp.Location = new System.Drawing.Point(9, 45);
+            this.idEmp.Name = "idEmp";
+            this.idEmp.Size = new System.Drawing.Size(65, 13);
+            this.idEmp.TabIndex = 11;
+            this.idEmp.Text = "Identificador";
             // 
             // EmployeeAddEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(184, 182);
+            this.ClientSize = new System.Drawing.Size(210, 192);
+            this.Controls.Add(this.idEmp);
+            this.Controls.Add(this.idEmpleado);
             this.Controls.Add(this.dateInput);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.save);
@@ -168,5 +188,7 @@
         private System.Windows.Forms.Button save;
         private System.Windows.Forms.Button cancel;
         private System.Windows.Forms.DateTimePicker dateInput;
+        private System.Windows.Forms.TextBox idEmpleado;
+        private System.Windows.Forms.Label idEmp;
     }
 }

@@ -7,29 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BusinessLogicLayer;
-using DataAccessLayer;
 using Shared.Entities;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
+
 
 namespace PresentationLayerWinform
 {
     public partial class EmployeeList : Form
     {
-        private static IBLEmployees blHandler;
+        private static ServiceReference1.ServiceEmployeesClient client;
 
-        private static void SetupDependencies()
-        {
-            IUnityContainer container = new UnityContainer();
-            container.LoadConfiguration();
-
-            blHandler = container.Resolve<IBLEmployees>();
-        }
 
         public EmployeeList()
         {
-            SetupDependencies();
+            client = new ServiceReference1.ServiceEmployeesClient();
             InitializeComponent();
         }
 
@@ -37,7 +29,7 @@ namespace PresentationLayerWinform
         {
 
             this.listBox1.SelectedIndexChanged -= new System.EventHandler(this.listBox1_SelectionChangeCommited);
-            List<Employee> employeeList = blHandler.GetAllEmployees();
+            Employee[] employeeList = client.GetAllEmployees();
 
             listBox1.DataSource = employeeList;
             listBox1.DisplayMember = "Name";
@@ -123,14 +115,14 @@ namespace PresentationLayerWinform
             }
             else
             {
-                blHandler.DeleteEmployee(selectedEmp.IdEmployee);
+                client.DeleteEmployee(selectedEmp.IdEmployee);
                 EmployeeList_Load(sender, e);
             }
         }
 
         private void nuevo_Click(object sender, EventArgs e)
         {
-            EmployeeAddEdit viewEdit = new EmployeeAddEdit(null, blHandler);
+            EmployeeAddEdit viewEdit = new EmployeeAddEdit(null, client);
             viewEdit.Show(); 
             viewEdit.FormClosing += (s, evt)=>{ 
                 EmployeeList_Load(sender, e);
@@ -140,7 +132,7 @@ namespace PresentationLayerWinform
 
         private void modificar_Click(object sender, EventArgs e)
         {
-            EmployeeAddEdit viewEdit = new EmployeeAddEdit((Employee)listBox1.SelectedItem, blHandler);
+            EmployeeAddEdit viewEdit = new EmployeeAddEdit((Employee)listBox1.SelectedItem, client);
             viewEdit.Show();
             viewEdit.FormClosing += (s, evt) => {
                 EmployeeList_Load(sender, e);

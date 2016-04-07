@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using BusinessLogicLayer;
 using DataAccessLayer;
 using Shared.Entities;
-using Microsoft.Practices.Unity;
-using Microsoft.Practices.Unity.Configuration;
 
 namespace PresentationLayerWinform
 {
@@ -19,21 +17,12 @@ namespace PresentationLayerWinform
     {
         Employee employee;
 
-        private static IBLEmployees blHandler;
+        private static ServiceReference1.ServiceEmployeesClient client;
 
-        private static void SetupDependencies()
-        {
-            IUnityContainer container = new UnityContainer();
-            container.LoadConfiguration();
-
-            blHandler = container.Resolve<IBLEmployees>();
-
-        }
-
-        public EmployeeAddEdit(Employee emp, IBLEmployees ble)
+        public EmployeeAddEdit(Employee emp, ServiceReference1.ServiceEmployeesClient cli)
         {
             this.employee = emp;
-            SetupDependencies();
+            client = cli;
             InitializeComponent();
         }
 
@@ -41,6 +30,7 @@ namespace PresentationLayerWinform
         {
             if(this.employee != null)
             {
+                this.idEmpleado.Text = this.employee.IdEmployee.ToString();
                 this.nameInput.Text = this.employee.Name;
                 this.dateInput.Value = this.employee.StartDate;
                 if(this.employee is PartTimeEmployee)
@@ -66,10 +56,12 @@ namespace PresentationLayerWinform
 
         private void save_Click(object sender, EventArgs e)
         {
+            Boolean isUpdate = true;
             if (this.fulltime.Checked)
             {
                 if (this.employee == null)
                 {
+                    isUpdate = false;
                     this.employee = new FullTimeEmployee();
                     ((FullTimeEmployee)this.employee).Salary = int.Parse(this.SalaryOrHourlyIput.Text);
                 }
@@ -78,13 +70,22 @@ namespace PresentationLayerWinform
             {
                 if (this.employee == null)
                 {
+                    isUpdate = false;
                     this.employee = new PartTimeEmployee();
                     ((PartTimeEmployee)this.employee).HourlyRate = int.Parse(this.SalaryOrHourlyIput.Text);
                 }
             }
             this.employee.Name = this.nameInput.Text;
+            this.employee.IdEmployee = int.Parse(this.idEmpleado.Text);
             this.employee.StartDate = this.dateInput.Value;
-            blHandler.AddEmployee(this.employee);
+            if (isUpdate) {
+                client.UpdateEmployee(this.employee);
+            }
+            else
+            {
+                client.AddEmployee(this.employee);
+            }
+            
             this.Close();
         }
     }

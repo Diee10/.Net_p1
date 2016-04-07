@@ -20,7 +20,7 @@ namespace DataAccessLayer
 
         public DALEmployeesMongo()
         {
-            BsonClassMap.RegisterClassMap<Employee>(cm =>
+BsonClassMap.RegisterClassMap<Employee>(cm =>
             {
                 cm.AutoMap();
                 cm.SetIgnoreExtraElements(true);
@@ -51,15 +51,15 @@ namespace DataAccessLayer
 
         public void DeleteEmployee(int id)
         {
-            var filter = Builders<Employee>.Filter.Eq("_id", id);
+            var filter = Builders<Employee>.Filter.Eq("IdEmployee", id);
             this.collection.DeleteOneAsync(filter);
         }
 
         public void UpdateEmployee(Employee emp)
         {
-            var filter = Builders<Employee>.Filter.Eq("_id", emp.IdEmployee);
-            var update = Builders<Employee>.Update.Set("Name", emp.Name).Set("StartDate", emp.StartDate);
-            var result = collection.UpdateOneAsync(filter, update);
+            var filter = Builders<Employee>.Filter.Eq("IdEmployee", emp.IdEmployee);
+            var update = Builders<Employee>.Update.Set("Name", emp.Name).Set("StartDate", emp.StartDate).CurrentDate("lastModified");
+            this.collection.UpdateOneAsync(filter, update);
 
             //return result;
         }
@@ -73,7 +73,7 @@ namespace DataAccessLayer
 
         public Employee GetEmployee(int id)
         {
-            var filter = Builders<Employee>.Filter.Eq("id", id);
+            var filter = Builders<Employee>.Filter.Eq("IdEmployee", id);
             Employee employee = (Employee)this.collection.Find(filter);
             return employee;
         }

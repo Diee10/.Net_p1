@@ -26,9 +26,8 @@ namespace Microsoft.ServiceModel.Samples
             IUnityContainer container = new UnityContainer();
             container.LoadConfiguration();
 
-            IBLEmployees blHandler = container.Resolve<IBLEmployees>();
+            blHandler = container.Resolve<IBLEmployees>();
 
-            blHandler.GetAllEmployees();
 
             //blHandler = new BLEmployees(new DataAccessLayer.DALEmployeesEF());
         }

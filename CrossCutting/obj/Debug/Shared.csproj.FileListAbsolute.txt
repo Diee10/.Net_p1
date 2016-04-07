@@ -5,6 +5,5 @@ C:\Users\Admin\Desktop\TSIG\practico-1\CrossCutting\obj\Debug\Shared.dll
 C:\Users\Admin\Desktop\TSIG\practico-1\CrossCutting\obj\Debug\Shared.pdb
 D:\Tecnologo\TSI1\Repo\CrossCutting\bin\Debug\Shared.dll
 D:\Tecnologo\TSI1\Repo\CrossCutting\bin\Debug\Shared.pdb
-D:\Tecnologo\TSI1\Repo\CrossCutting\obj\Debug\Shared.csprojResolveAssemblyReference.cache
 D:\Tecnologo\TSI1\Repo\CrossCutting\obj\Debug\Shared.dll
 D:\Tecnologo\TSI1\Repo\CrossCutting\obj\Debug\Shared.pdb

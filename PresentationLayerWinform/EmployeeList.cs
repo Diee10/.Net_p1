@@ -10,16 +10,26 @@ using System.Windows.Forms;
 using BusinessLogicLayer;
 using DataAccessLayer;
 using Shared.Entities;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 
 namespace PresentationLayerWinform
 {
     public partial class EmployeeList : Form
     {
-        private IBLEmployees _ble;
+        private static IBLEmployees blHandler;
+
+        private static void SetupDependencies()
+        {
+            IUnityContainer container = new UnityContainer();
+            container.LoadConfiguration();
+
+            blHandler = container.Resolve<IBLEmployees>();
+        }
 
         public EmployeeList()
         {
-            _ble = new BLEmployees(new DALEmployeesMongo());
+            SetupDependencies();
             InitializeComponent();
         }
 
@@ -27,7 +37,7 @@ namespace PresentationLayerWinform
         {
 
             this.listBox1.SelectedIndexChanged -= new System.EventHandler(this.listBox1_SelectionChangeCommited);
-            List<Employee> employeeList = _ble.GetAllEmployees();
+            List<Employee> employeeList = blHandler.GetAllEmployees();
 
             listBox1.DataSource = employeeList;
             listBox1.DisplayMember = "Name";
@@ -113,14 +123,14 @@ namespace PresentationLayerWinform
             }
             else
             {
-                _ble.DeleteEmployee(selectedEmp.IdEmployee);
+                blHandler.DeleteEmployee(selectedEmp.IdEmployee);
                 EmployeeList_Load(sender, e);
             }
         }
 
         private void nuevo_Click(object sender, EventArgs e)
         {
-            EmployeeAddEdit viewEdit = new EmployeeAddEdit(null, _ble);
+            EmployeeAddEdit viewEdit = new EmployeeAddEdit(null, blHandler);
             viewEdit.Show(); 
             viewEdit.FormClosing += (s, evt)=>{ 
                 EmployeeList_Load(sender, e);
@@ -130,7 +140,7 @@ namespace PresentationLayerWinform
 
         private void modificar_Click(object sender, EventArgs e)
         {
-            EmployeeAddEdit viewEdit = new EmployeeAddEdit((Employee)listBox1.SelectedItem, _ble);
+            EmployeeAddEdit viewEdit = new EmployeeAddEdit((Employee)listBox1.SelectedItem, blHandler);
             viewEdit.Show();
             viewEdit.FormClosing += (s, evt) => {
                 EmployeeList_Load(sender, e);

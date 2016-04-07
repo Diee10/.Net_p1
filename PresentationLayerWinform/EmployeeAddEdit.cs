@@ -10,18 +10,30 @@ using System.Windows.Forms;
 using BusinessLogicLayer;
 using DataAccessLayer;
 using Shared.Entities;
+using Microsoft.Practices.Unity;
+using Microsoft.Practices.Unity.Configuration;
 
 namespace PresentationLayerWinform
 {
     public partial class EmployeeAddEdit : Form
     {
         Employee employee;
-        private IBLEmployees _ble;
+
+        private static IBLEmployees blHandler;
+
+        private static void SetupDependencies()
+        {
+            IUnityContainer container = new UnityContainer();
+            container.LoadConfiguration();
+
+            blHandler = container.Resolve<IBLEmployees>();
+
+        }
 
         public EmployeeAddEdit(Employee emp, IBLEmployees ble)
         {
             this.employee = emp;
-            _ble = ble;
+            SetupDependencies();
             InitializeComponent();
         }
 
@@ -31,15 +43,17 @@ namespace PresentationLayerWinform
             {
                 this.nameInput.Text = this.employee.Name;
                 this.dateInput.Value = this.employee.StartDate;
-                if(this.employee.GetType().Equals("PartTimeEmployee"))
+                if(this.employee is PartTimeEmployee)
                 {
                     this.SalaryOrHourlyIput.Text = ((PartTimeEmployee)this.employee).HourlyRate.ToString();
-                    this.fulltime.Select();
+                    this.parttime.Select();
+                    SalaryOrHourly.Text = "Hourly Rate";
                 }
                 else
                 {
                     this.SalaryOrHourlyIput.Text = ((FullTimeEmployee)this.employee).Salary.ToString();
-                    this.parttime.Select();
+                    this.fulltime.Select();
+                    SalaryOrHourly.Text = "Salary";
                 }
             }
         }
@@ -70,7 +84,7 @@ namespace PresentationLayerWinform
             }
             this.employee.Name = this.nameInput.Text;
             this.employee.StartDate = this.dateInput.Value;
-            _ble.AddEmployee(this.employee);
+            blHandler.AddEmployee(this.employee);
             this.Close();
         }
     }

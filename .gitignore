@@ -5,10 +5,10 @@ BusinessLogicLayer/bin/
 CrossCutting/obj/
 DataAccessLayer/obj/
 Test/obj/
+Test/bin/
 ServiceLayer/obj/
 ServiceLayer/bin/
 PresentationLayerWinform/obj/
-Test/
 CrossCutting/bin/
 DataAccessLayer/bin/
 DataAccessLayer/obj/

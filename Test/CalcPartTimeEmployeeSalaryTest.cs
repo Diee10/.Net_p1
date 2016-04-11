@@ -27,12 +27,11 @@ namespace Test
             int hours = 10;
             IBLEmployees blHandler = container.Resolve<IBLEmployees>();
             List<Employee> partTimeEmployees = blHandler.GetAllEmployees().Where(emp => emp is PartTimeEmployee).ToList();
-
             //act
             var sum = partTimeEmployees.Sum(emp => blHandler.CalcPartTimeEmployeeSalary(emp.IdEmployee, hours));
 
             //assert
-            Assert.AreEqual(sum, 15000);
+            Assert.AreEqual(sum, 10000);
         }
 
     }

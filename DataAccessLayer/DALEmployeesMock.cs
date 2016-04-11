@@ -11,16 +11,16 @@ namespace DataAccessLayer
     {
         private List<Employee> employeesRepository = new List<Employee>()
         {
-            new PartTimeEmployee(){HourlyRate = 100},
-            new PartTimeEmployee(){HourlyRate = 150},
-            new PartTimeEmployee(){HourlyRate = 200},
-            new PartTimeEmployee(){HourlyRate = 250},
-            new PartTimeEmployee(){HourlyRate = 300},
-            new FullTimeEmployee(){},
-            new FullTimeEmployee(){},
-            new FullTimeEmployee(){},
-            new FullTimeEmployee(){},
-            new FullTimeEmployee(){},
+            new PartTimeEmployee(){HourlyRate = 100,IdEmployee = 1},
+            new PartTimeEmployee(){HourlyRate = 150,IdEmployee = 2},
+            new PartTimeEmployee(){HourlyRate = 200,IdEmployee = 3},
+            new PartTimeEmployee(){HourlyRate = 250,IdEmployee = 4},
+            new PartTimeEmployee(){HourlyRate = 300,IdEmployee = 5},
+            new FullTimeEmployee(){IdEmployee = 6},
+            new FullTimeEmployee(){IdEmployee = 7},
+            new FullTimeEmployee(){IdEmployee = 8},
+            new FullTimeEmployee(){IdEmployee = 9},
+            new FullTimeEmployee(){IdEmployee = 10},
         };
 
         public void AddEmployee(Employee emp)

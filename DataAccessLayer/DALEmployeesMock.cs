@@ -45,7 +45,16 @@ namespace DataAccessLayer
 
         public Employee GetEmployee(int id)
         {
-            throw new NotImplementedException();
+            Employee emp = null;
+            List<Employee> lista = GetAllEmployees();
+            foreach (Employee empT in lista)
+            {
+                if (empT.IdEmployee == id)
+                {
+                    emp = empT;
+                }
+            }
+            return emp;
         }
     }
 }

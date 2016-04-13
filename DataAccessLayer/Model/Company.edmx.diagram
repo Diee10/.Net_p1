@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="CompanyModel.Employee" Width="1.5" PointX="1.875" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CompanyModel.PartTimeEmployee" Width="1.5" PointX="4.625" PointY="2.25" />
         <InheritanceConnector EntityType="CompanyModel.PartTimeEmployee" />
-        <EntityTypeShape EntityType="CompanyModel.FullTimeEmployee" Width="1.5" PointX="4.625" PointY="0.5" />
+        <EntityTypeShape EntityType="CompanyModel.FullTimeEmployee" Width="1.5" PointX="4.625" PointY="0.5" IsExpanded="true" />
         <InheritanceConnector EntityType="CompanyModel.FullTimeEmployee" />
       </Diagram>
     </edmx:Diagrams>

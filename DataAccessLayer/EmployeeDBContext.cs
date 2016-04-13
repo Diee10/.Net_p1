@@ -16,20 +16,9 @@ namespace DataAccessLayer
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<FullTimeEmployee>().Map(m =>
-            {
-                m.MapInheritedProperties();
-                m.ToTable("FULL_TIME_EMP");
-            });
-
-            modelBuilder.Entity<PartTimeEmployee>().Map(m =>
-            {
-                m.MapInheritedProperties();
-                m.ToTable("PART_TIME_EMP");
-            });
-            modelBuilder.Entity<Employee>().Property(p => p.IdEmployee).HasDatabaseGeneratedOption(DatabaseGeneratedOption.None);
-
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Employee>()
+            .Map<FullTimeEmployee>(m => m.Requires("TYPE_EMP").HasValue(1))
+            .Map<PartTimeEmployee>(m => m.Requires("TYPE_EMP").HasValue(2));
         }
     }
 }

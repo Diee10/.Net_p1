@@ -11,3 +11,8 @@ C:\Users\Admin\Desktop\Mosketers\.Net_p1\CrossCutting\bin\Debug\Shared.dll
 C:\Users\Admin\Desktop\Mosketers\.Net_p1\CrossCutting\bin\Debug\Shared.pdb
 C:\Users\Admin\Desktop\Mosketers\.Net_p1\CrossCutting\obj\Debug\Shared.dll
 C:\Users\Admin\Desktop\Mosketers\.Net_p1\CrossCutting\obj\Debug\Shared.pdb
+C:\Users\Andrulo\Desktop\.Net_p1\CrossCutting\bin\Debug\Shared.dll
+C:\Users\Andrulo\Desktop\.Net_p1\CrossCutting\bin\Debug\Shared.pdb
+C:\Users\Andrulo\Desktop\.Net_p1\CrossCutting\obj\Debug\Shared.csprojResolveAssemblyReference.cache
+C:\Users\Andrulo\Desktop\.Net_p1\CrossCutting\obj\Debug\Shared.dll
+C:\Users\Andrulo\Desktop\.Net_p1\CrossCutting\obj\Debug\Shared.pdb

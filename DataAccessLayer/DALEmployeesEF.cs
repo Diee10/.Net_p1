@@ -16,7 +16,7 @@ namespace DataAccessLayer
             try
             {
                 db.Employee.Add(emp);
-                db.SaveChangesAsync();
+                db.SaveChangesAsync().Wait();
             }
             catch (Exception ex)
             {
@@ -32,7 +32,7 @@ namespace DataAccessLayer
             try
             {
                 db.Employee.Remove(matched_Employee);
-                db.SaveChangesAsync();
+                db.SaveChangesAsync().Wait();
             }
             catch (Exception ex)
             {
@@ -52,7 +52,7 @@ namespace DataAccessLayer
                 {
                     empleado.Name = emp.Name;
                     empleado.StartDate = emp.StartDate;
-                    db.SaveChangesAsync();
+                    db.SaveChangesAsync().Wait();
                 }
             }
             catch (Exception ex)
